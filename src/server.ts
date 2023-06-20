@@ -1,4 +1,4 @@
-import express, {Response} from 'express';
+import express, { Response } from 'express';
 import path from 'path';
 import mustache from 'mustache-express';
 import dotenv from 'dotenv';
@@ -8,7 +8,7 @@ dotenv.config();
 
 const server = express();
 
-server.set('view engine', mustache());
+server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));
 server.engine('mustache', mustache());
 

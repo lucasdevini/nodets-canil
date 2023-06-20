@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
+import { Response } from "express";
 
-export const pesquisa = (req: Request, res:Response) => {
-    res.render('pages/pesquisa');
+export const pesquisa = (res:Response) => {
+    res.render('pages/page');
 }
