@@ -1,4 +1,4 @@
-import express, { Response } from 'express';
+import express, { Request, Response } from 'express';
 import path from 'path';
 import mustache from 'mustache-express';
 import dotenv from 'dotenv';
@@ -18,8 +18,8 @@ server.use(express.urlencoded({extended:true}));
 
 server.use(mainRoutes);
 
-server.use('/', (res: Response) => {
-    res.status(404).send('Página não encontrada!');
+server.use('/', (req: Request, res: Response) => {
+    res.status(404).render('pages/404');
 })
 
 server.listen(process.env.PORT);
