@@ -4,5 +4,10 @@ import { Pet } from "../models/pet";
 export const pesquisa = (req: Request, res:Response) => {
     let busca: string = req.query.q as string;
 
-    res.render('pages/pesquisa', {pets: Pet.showFromSearch(busca), busca},);
+    if(!busca) {
+        res.redirect('/'); 
+        return;
+    }
+        
+    res.render('pages/pesquisa', {pets: Pet.showFromSearch(busca)}); 
 }
